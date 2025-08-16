@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: #fdfdfd;
+  color: #222;
+  transition: background 0.5s, color 0.5s;
+}
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+header h1 {
+  font-size: 2.5rem;
+  color: #b8860b;
+}
+header h3 {
+  font-size: 1.2rem;
+  color: #777;
+}
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: auto;
+  background: url('https://via.placeholder.com/120') no-repeat center/cover;
+  border: 4px solid #b8860b;
+}
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+h2 {
+  color: #b8860b;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #b8860b;
+  display: inline-block;
+}
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px,1fr));
+  gap: 10px;
+}
+.skill-grid div {
+  background: #eee;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.skill-grid div:hover {
+  transform: scale(1.05);
+  background: #b8860b;
+  color: #fff;
+}
+.project-card {
+  background: #f9f9f9;
+  border-left: 4px solid #b8860b;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #fff;
+  margin-top: 2rem;
+}
+.toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+#theme-toggle {
+  padding: 8px 12px;
+  border-radius: 50%;
+  border: none;
+  background: #b8860b;
+  color: #fff;
+  cursor: pointer;
+}
+body.dark {
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+body.dark section {
+  background: rgba(30,30,30,0.9);
+}
+body.dark h2, body.dark header h1 {
+  color: #daa520;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
