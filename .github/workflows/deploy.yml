@@ -1,0 +1,85 @@
+name: Build and deploy
+
+# Every push to main rebuilds the site, the PDF and the social image from resume.json
+# and publishes them to GitHub Pages (Settings → Pages → Source: GitHub Actions).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      pages: ${{ steps.pages.outputs.enabled }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Test the template
+        run: npm test
+
+      - name: Resume score
+        run: |
+          node scripts/check.mjs
+          node scripts/check.mjs --markdown >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Build site, PDF and social image
+        run: node scripts/build.mjs
+        env:
+          # Optional: a repository variable for custom domains, e.g. https://cv.example.com/
+          SITE_URL: ${{ vars.SITE_URL }}
+
+      - name: Make sure the PDF was rendered
+        run: test -s dist/resume.pdf && test -s dist/og.png
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+      # A fresh copy of the template has Pages switched off. Skip the deploy (green build)
+      # instead of failing, and say how to turn it on. Only a 404 counts as "off".
+      - name: Is GitHub Pages on?
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if out=$(gh api "repos/$GITHUB_REPOSITORY/pages" 2>&1); then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          elif grep -q "HTTP 404" <<<"$out"; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Built but not published: turn on Settings → Pages → Source: GitHub Actions, then re-run this workflow."
+            printf '\n> **Built but not published.** Turn on **Settings → Pages → Source: GitHub Actions**, then re-run this workflow.\n' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::warning::Could not check GitHub Pages ($out). Trying to deploy anyway."
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    if: needs.build.outputs.pages == 'true' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

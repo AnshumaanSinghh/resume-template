@@ -1,0 +1,60 @@
+{
+  "basics": {
+    "name": "Anshumaan Singh",
+    "label": "Software Engineer",
+    "email": "XY",
+    "phone": "XY",
+    "summary": "I am a passionate software engineer skilled in designing and developing scalable applications. My focus lies in problem-solving, efficient coding practices, and creating impactful digital solutions."
+  },
+  "work": [
+    {
+      "name": "Company XY",
+      "position": "Software Engineer",
+      "startDate": "20XX",
+      "highlights": [
+        "Developed and maintained scalable web applications.",
+        "Optimized backend services for performance improvement.",
+        "Collaborated with cross-functional teams for agile delivery."
+      ]
+    },
+    {
+      "name": "Company XY",
+      "position": "Intern - Full Stack Developer",
+      "startDate": "20XX",
+      "highlights": [
+        "Built responsive front-end features using React.",
+        "Integrated REST APIs with secure authentication."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AI Automation Tool",
+      "description": "Developed a tool to automate business workflows using Python and APIs, improving efficiency by 40%."
+    },
+    {
+      "name": "Portfolio Website",
+      "description": "Created a personal portfolio website with React, animations, and light/dark mode."
+    }
+  ],
+  "skills": [
+    { "name": "Skills", "keywords": ["Python", "Java", "C++", "JavaScript", "SQL", "React", "Node.js", "Power BI", "Git/GitHub"] }
+  ],
+  "education": [
+    { "institution": "XY University", "studyType": "B.Tech", "area": "Computer Science", "endDate": "20XX" }
+  ],
+  "certificates": [
+    { "name": "Certified Python Developer", "issuer": "XY" },
+    { "name": "AWS Cloud Practitioner", "issuer": "XY" },
+    { "name": "Data Analysis with Power BI", "issuer": "XY" }
+  ],
+  "awards": [
+    { "title": "Top 5% in National Coding Challenge", "date": "20XX" }
+  ],
+  "interests": [
+    { "name": "AI & Automation" },
+    { "name": "Music" },
+    { "name": "Research" },
+    { "name": "Gaming" }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "resume-template",
+  "version": "2.0.0",
+  "description": "Edit one JSON file, get an editorial resume website, an ATS-safe one-page PDF, a plain-text copy and a resume score. Zero dependencies.",
+  "type": "module",
+  "private": true,
+  "author": "Anshumaan Singh (https://github.com/AnshumaanSinghh)",
+  "license": "MIT",
+  "homepage": "https://anshumaansinghh.github.io/resume-template/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnshumaanSinghh/resume-template.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "resume",
+    "cv",
+    "resume-template",
+    "json-resume",
+    "ats",
+    "ats-friendly",
+    "portfolio",
+    "github-pages"
+  ]
+}

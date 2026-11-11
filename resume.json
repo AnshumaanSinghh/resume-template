@@ -1,0 +1,191 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Aarav Mehta",
+    "label": "Senior Software Engineer · Payments & Platform",
+    "email": "aarav@example.com",
+    "phone": "+44 7700 900461",
+    "url": "https://aarav.example.com",
+    "summary": "Senior software engineer with 4+ years building payment systems and developer platforms in TypeScript, Node.js and AWS. Cut checkout latency by 77% and cloud spend by 31% at Contoso Pay. Seeking a senior or staff platform role.",
+    "location": {
+      "city": "London",
+      "countryCode": "UK"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "aarav-mehta-example",
+        "url": "https://github.com/aarav-mehta-example"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "aarav-mehta-example",
+        "url": "https://www.linkedin.com/in/aarav-mehta-example"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Contoso Pay",
+      "position": "Senior Software Engineer",
+      "location": "London, UK",
+      "url": "https://contoso.example.com",
+      "startDate": "2024-04",
+      "highlights": [
+        "Rebuilt the checkout API in Node.js, cutting p95 latency from 820 ms to 190 ms across 3M+ payments a month.",
+        "Designed an AWS reconciliation pipeline (Lambda, SQS, PostgreSQL) that flags 99.7% of mismatches in 5 minutes.",
+        "Reduced AWS spend by 31% ($18k a month) by right-sizing services and moving cold data to cheaper storage tiers.",
+        "Mentored 4 engineers and moved the team to trunk-based development, taking deploys from weekly to 12 a week."
+      ]
+    },
+    {
+      "name": "Fabrikam Cloud",
+      "position": "Software Engineer",
+      "location": "Bengaluru, India",
+      "url": "https://fabrikam.example.com",
+      "startDate": "2022-07",
+      "endDate": "2024-03",
+      "highlights": [
+        "Built a React and TypeScript analytics dashboard for 1,200+ enterprise admins, lifting weekly active usage by 22%.",
+        "Shipped a Python service that routes support tickets with a scikit-learn classifier, saving support 35 hours a week.",
+        "Migrated 14 Java services to Kubernetes with Docker and Helm, cutting release time from 2 hours to 15 minutes."
+      ]
+    },
+    {
+      "name": "Northwind Traders",
+      "position": "Software Engineering Intern",
+      "location": "Bengaluru, India",
+      "startDate": "2021-05",
+      "endDate": "2021-07",
+      "highlights": [
+        "Prototyped a demand forecast in Python and SQL that reduced stock-outs by 18% across 40 pilot stores, then automated 6 weekly reports into one Power BI dashboard."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Ledgerline",
+      "description": "Open-source double-entry ledger library for Node.js with idempotent writes and a full audit trail.",
+      "highlights": [
+        "Grew to 2.1k GitHub stars and 30+ production users with 98% test coverage."
+      ],
+      "keywords": ["TypeScript", "Node.js", "PostgreSQL", "GitHub Actions"],
+      "url": "https://github.com/aarav-mehta-example/ledgerline"
+    },
+    {
+      "name": "Tandem",
+      "description": "Real-time collaborative whiteboard built on WebSockets and CRDTs.",
+      "highlights": [
+        "Sustained 60 fps with 50 concurrent editors in load tests; offline edits merge without conflicts."
+      ],
+      "keywords": ["React", "TypeScript", "WebSockets"]
+    },
+    {
+      "name": "DocsPilot",
+      "description": "Retrieval-augmented assistant for internal engineering docs, built with Python and FastAPI.",
+      "highlights": [
+        "Answered 78% of 1,900 questions without escalation in a 6-week pilot."
+      ],
+      "keywords": ["Python", "FastAPI", "PostgreSQL"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["TypeScript", "Python", "Java", "SQL"]
+    },
+    {
+      "name": "Backend",
+      "keywords": ["Node.js", "PostgreSQL", "FastAPI", "WebSockets"]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "keywords": ["AWS", "Kubernetes", "Docker", "Helm", "GitHub Actions"]
+    },
+    {
+      "name": "Frontend & data",
+      "keywords": ["React", "scikit-learn", "Power BI"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Northwind Institute of Technology",
+      "area": "Computer Science and Engineering",
+      "studyType": "B.Tech",
+      "startDate": "2018-08",
+      "endDate": "2022-06",
+      "score": "8.9/10 CGPA",
+      "courses": ["Distributed Systems", "Databases", "Algorithms"]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "AWS Certified Solutions Architect – Associate",
+      "issuer": "Amazon Web Services",
+      "date": "2025-03"
+    },
+    {
+      "name": "Certified Kubernetes Application Developer (CKAD)",
+      "issuer": "The Linux Foundation",
+      "date": "2023-09"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Engineering Excellence Award",
+      "awarder": "Contoso Pay",
+      "date": "2025-12",
+      "summary": "Top 3 of 240 engineers, for the checkout rebuild."
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Full professional"
+    },
+    {
+      "language": "Hindi",
+      "fluency": "Native"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Distributed systems"
+    },
+    {
+      "name": "Bouldering"
+    },
+    {
+      "name": "Film photography"
+    }
+  ],
+  "meta": {
+    "canonical": "https://anshumaansinghh.github.io/resume-template/",
+    "version": "v2.0.0",
+    "lastModified": "2026-11-11",
+    "template": {
+      "status": "Open to senior and staff roles from January 2027",
+      "stats": [
+        {
+          "value": "190 ms",
+          "label": "p95 checkout latency, down from 820 ms"
+        },
+        {
+          "value": "3M+",
+          "label": "payments a month through the checkout API"
+        },
+        {
+          "value": "2.1k",
+          "label": "GitHub stars on Ledgerline"
+        }
+      ],
+      "accent": {
+        "light": "#8d6316",
+        "dark": "#e3b456"
+      },
+      "paper": "A4",
+      "qr": true,
+      "credit": true
+    }
+  }
+}
